@@ -1,6 +1,4 @@
 class ProductsController < ApplicationController
-  # has_rich_text :description
-  # validates :name, presence: true
 
   allow_unauthenticated_access only: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update]
@@ -47,6 +45,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.expect(product: [ :name, :description ])
+      params.expect(product: [ :name, :description, :image ])
     end
 end
